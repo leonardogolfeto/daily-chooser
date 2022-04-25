@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Um bot que irá moderar e deixar a sua comunidade segura de um jeito fácil!">
+  <title>Daily chooser - Facilitando a escolha do facilitador</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="carregar()">
+
+  <main class="conteudo">
+    <section class="conteudo-principal">
+      <div class="conteudo-principal-escrito">
+        <h1 class="conteudo-principal-escrito-titulo">Daily chooser</h1>
+        <h2 class="conteudo-principal-escrito-subtitulo">Facilitando a escolha do facilitador</h2>
+        <label for="area" class="conteudo-secundario-paragrafo">Nomes:</label>
+        <textarea id="area" style="border-radius: 7px; min-height: 80px"></textarea>
+        <button class="conteudo-principal-escrito-botao" onclick="sortear()">Sortear!</button>
+      </div>
+      <img class="conteudo-principal-imagem" src="robo.png" alt="Imagem da Balle Bot">
+    </section>
+
+    <section class="conteudo-secundario">
+      <h3 class="conteudo-secundario-titulo">O que ele faz por você?</h3>
+      <p class="conteudo-secundario-paragrafo">1. Escolhe <strong>de forma automatica</strong> quem será o facilitador das nossas dailys</p>
+    </section>
+  </main>
+
+</body>
+
+<footer class="rodape conteudo-secundario">
+  <p class="conteudo-secundario-paragrafo">Criado com &#10084;&#65039; por <strong>Leonardo Golfeto</strong></p>
+</footer>
+
+<script>
+ function carregar() {
+    let element = document.getElementById("area")
+    element.value = "Bruno,Ana,Leonardo,Andre,Rafa,Mauricio"
+  }
+
+  function sortear(){
+    let element = document.getElementById("area")
+    let valueArray = element.value.split(",")
+    alert("O Facilitador sorteado foi: "+ valueArray[Math.floor((Math.random()*valueArray.length))]);
+  }
+
+</script>
+
+</html>
