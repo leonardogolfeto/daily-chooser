@@ -41,8 +41,14 @@
 
 <script>
  function carregar() {
+   
+   const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+  });
+    let value = params.names;
+   
     let element = document.getElementById("area")
-    element.value = "Mariana,Agay,Thiago Queiroz,Thiago Mezani,Guilherme,Gabriel,Maria Estela,Kauê,Danilo,Diogo,Lucas,Vanessa,Maria Estela,Leonardo,André,Rafael,Bruno"
+    element.value = value
   }
 
   function sortear(){
